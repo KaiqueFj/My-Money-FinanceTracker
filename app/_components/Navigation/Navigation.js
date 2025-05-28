@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import {
-  BeakerIcon,
   BellIcon,
   Cog6ToothIcon,
   UserCircleIcon,
@@ -9,7 +8,7 @@ import {
 export default function Navigation() {
   return (
     <nav className="z-10 text-xl">
-      <ul className="flex items-center text-primary-50 gap-16">
+      <ul className="flex items-center text-primary-600 gap-16">
         <li>
           <Link href="/" className="transition-colors hover:text-primary-100 ">
             Overview
@@ -48,7 +47,7 @@ export default function Navigation() {
             <BellIcon className="w-8 h-8transition-colors text-primary-600  group-hover:text-primary-800" />
           </li>
 
-          <li className="ml-6">
+          <li>
             <Link
               href="/"
               className="transition-colors gap-4 hover:text-primary-100 "
