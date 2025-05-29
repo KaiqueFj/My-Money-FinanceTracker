@@ -1,4 +1,5 @@
 import Filter from "./_components/Fillter/Filter";
+import LastTransactions from "./_components/LastTransactions/LastTransactions";
 import QuickActions from "./_components/QuickActions/QuickActions";
 import UserValues from "./_components/UserValues/UserValues";
 
@@ -15,6 +16,10 @@ export default function Home() {
 
       <div className="flex items-center justify-between flex-row w-full mt-20">
         <QuickActions />
+      </div>
+
+      <div className="flex items-center justify-between flex-row w-full mt-20">
+        <LastTransactions />
       </div>
     </div>
   );

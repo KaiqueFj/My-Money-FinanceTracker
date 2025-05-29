@@ -11,6 +11,7 @@
   --color-primary-450: #22d3ee; /* Accent cyan */
   --color-primary-500: #14b8a6; /* Accent teal */
   --color-primary-600: #fcfcfd; /* Main text color white */
+  --color-primary-700: #1ed760
   --background: #0f172a; /* Base background */
   --foreground: #f1f5f9; /* Main text */
 }
