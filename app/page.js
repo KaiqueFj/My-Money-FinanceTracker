@@ -1,3 +1,4 @@
+import ExpensesCategory from "./_components/ExpensesByCategory/ExpensesCategory";
 import Filter from "./_components/Fillter/Filter";
 import LastTransactions from "./_components/LastTransactions/LastTransactions";
 import QuickActions from "./_components/QuickActions/QuickActions";
@@ -18,7 +19,8 @@ export default function Home() {
         <QuickActions />
       </div>
 
-      <div className="flex items-center justify-between flex-row w-full mt-20">
+      <div className="flex flex-row justify-between items-start  w-full mt-20">
+        <ExpensesCategory />
         <LastTransactions />
       </div>
     </div>
