@@ -19,7 +19,7 @@ export default function Home() {
         <QuickActions />
       </div>
 
-      <div className="flex flex-row justify-between items-start  w-full mt-20">
+      <div className="flex flex-row justify-between gap-4 items-start  w-full mt-20">
         <ExpensesCategory />
         <LastTransactions />
       </div>
