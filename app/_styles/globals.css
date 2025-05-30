@@ -1,19 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #131220; /* Main background */
-  --color-primary-100: #181d3a; /* Card background */
-  --color-primary-150: #273549; /* Card hover */
-  --color-primary-200: #334155; /* Dividers or subdued text */
-  --color-primary-250: #e2e8f0; /* Headline text */
-  --color-primary-350: #94a3b8; /* Subtext / labels */
-  --color-primary-400: #64748b; /* Hints / borders */
-  --color-primary-450: #22d3ee; /* Accent cyan */
-  --color-primary-500: #14b8a6; /* Accent teal */
-  --color-primary-600: #fcfcfd; /* Main text color white */
-  --color-primary-700: #1ed760
-  --background: #0f172a; /* Base background */
-  --foreground: #f1f5f9; /* Main text */
+  --color-primary-50: #ffffff; /* Main background */
+  --color-primary-100: #0057ff; /* Sidebar blue */
+  --color-primary-200: #eceff2; /* Card backgrounds */
+  --color-primary-400: #f5f8ff; /* Table row backgrounds */
+  --color-primary-500: #0a0a0a; /* Dark text */
+  --color-primary-600: #516778; /* Light gray text */
 }
 :root {
   --background: #ffffff;

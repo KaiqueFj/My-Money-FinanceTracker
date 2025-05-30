@@ -31,14 +31,14 @@ function CardContainerOfValues({ children, value, percentage }) {
   const iconColor = isPositive ? "text-green-400" : "text-red-400";
 
   return (
-    <div className="flex flex-col justify-between bg-primary-100 rounded-xl shadow-lg p-6 min-w-[200px] flex-1 transition-transform hover:scale-[1.02]">
+    <div className="flex flex-col justify-between bg-primary-50/10 border-4 border-primary-200/60 rounded-2xl  p-6 min-w-[200px] flex-1 transition-transform hover:scale-[1.02]">
       <div className="flex flex-col gap-2">
-        <p className="text-primary-600 font-semibold text-xl">{children}</p>
-        <p className="text-primary-450 font-bold text-4xl">{value}</p>
+        <p className="text-primary-600 font-semibold text-lg">{children}</p>
+        <p className="text-primary-500 font-bold text-5xl">{value}</p>
       </div>
 
       <div className="flex justify-end mt-4">
-        <p className="text-primary-600 text-lg font-medium min-w-[70px] rounded-md px-2 py-1 border border-primary-250/40 flex items-center gap-1">
+        <p className="text-primary-500 text-md font-medium min-w-[70px] rounded-md px-2 py-1 border-4 border-primary-200/60 flex items-center gap-1">
           <Icon className={`w-5 h-5 ${iconColor}`} />
           {`${Math.abs(numericPercentage)}%`}
         </p>

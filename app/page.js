@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-between w-full">
       <div className="flex flex-row w-full justify-between">
-        <h1 className="text-primary-600 text-6xl">Hello, Kaique</h1>
+        <h1 className="text-primary-500 text-6xl">Hello, Kaique</h1>
         <Filter />
       </div>
       <div className="flex items-center justify-between flex-row w-full mt-20">
