@@ -20,7 +20,7 @@ export default function Navigation() {
 
         <li>
           <Link
-            href="/"
+            href="/transactions"
             className="transition-colors rounded-md p-3 hover:text-primary-100 hover:bg-primary-400 "
           >
             Transactions
@@ -29,7 +29,7 @@ export default function Navigation() {
 
         <li>
           <Link
-            href="/"
+            href="/analytics"
             className="transition-colors rounded-md p-3 hover:text-primary-100 hover:bg-primary-400 "
           >
             Analytics
