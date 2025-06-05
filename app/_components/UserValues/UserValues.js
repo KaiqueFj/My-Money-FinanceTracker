@@ -1,5 +1,6 @@
 import React from "react";
 import { getTransactions } from "@/app/_lib/data-service";
+import { formatCurrency } from "@/app/utils/formatValues";
 
 export default async function UserValues() {
   const transactions = await getTransactions();
@@ -20,14 +21,6 @@ function calculateBalance(t, type) {
   return t
     .filter((t) => t.type === type)
     .reduce((acc, transaction) => acc + Number(transaction.amount), 0);
-}
-
-function formatCurrency(value) {
-  return value.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
-  });
 }
 
 function CardContainerOfValues({ type, value }) {
