@@ -1,46 +1,42 @@
 import React from "react";
-import { ArrowDownIcon, ArrowUpIcon } from "@heroicons/react/24/solid";
+import { getTransactions } from "@/app/_lib/data-service";
 
-const valueCards = [
-  { label: "Balance", value: "$5.420,30", percentage: "100" },
-  { label: "Expenses", value: "$2.420,30", percentage: "12,5" },
-  { label: "Income", value: "$1.420,30", percentage: "-5" },
-];
+export default async function UserValues() {
+  const transactions = await getTransactions();
+  const income = calculateBalance(transactions, "income");
+  const expenses = calculateBalance(transactions, "expense");
+  const balance = income - expenses;
 
-export default function UserValues() {
   return (
     <div className="flex flex-wrap gap-6 justify-between items-stretch w-full">
-      {valueCards.map(({ label, value, percentage }) => (
-        <CardContainerOfValues
-          key={label}
-          value={value}
-          percentage={percentage}
-        >
-          {label}
-        </CardContainerOfValues>
-      ))}
+      <CardContainerOfValues type="Balance" value={balance} />
+      <CardContainerOfValues type="Income" value={income} />
+      <CardContainerOfValues type="Expenses" value={expenses} />
     </div>
   );
 }
 
-function CardContainerOfValues({ children, value, percentage }) {
-  const numericPercentage = parseFloat(percentage.replace(",", "."));
-  const isPositive = numericPercentage >= 0;
+function calculateBalance(t, type) {
+  return t
+    .filter((t) => t.type === type)
+    .reduce((acc, transaction) => acc + Number(transaction.amount), 0);
+}
 
-  const Icon = isPositive ? ArrowUpIcon : ArrowDownIcon;
-  const iconColor = isPositive ? "text-green-400" : "text-red-400";
+function formatCurrency(value) {
+  return value.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+  });
+}
 
+function CardContainerOfValues({ type, value }) {
   return (
     <div className="flex flex-col justify-between bg-primary-50/10 border-4 border-primary-200/60 rounded-2xl  p-6 min-w-[200px] flex-1 transition-transform hover:scale-[1.02]">
       <div className="flex flex-col gap-2">
-        <p className="text-primary-600 font-semibold text-lg">{children}</p>
-        <p className="text-primary-500 font-bold text-5xl">{value}</p>
-      </div>
-
-      <div className="flex justify-end mt-4">
-        <p className="text-primary-500 text-md font-medium min-w-[70px] rounded-md px-2 py-1 border-4 border-primary-200/60 flex items-center gap-1">
-          <Icon className={`w-5 h-5 ${iconColor}`} />
-          {`${Math.abs(numericPercentage)}%`}
+        <p className="text-primary-600 font-semibold text-lg">{type}</p>
+        <p className="text-primary-500 font-bold text-5xl">
+          {formatCurrency(value)}
         </p>
       </div>
     </div>

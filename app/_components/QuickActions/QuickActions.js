@@ -1,4 +1,5 @@
 import { PlusCircleIcon, MinusCircleIcon } from "@heroicons/react/24/solid";
+import InsertDevDataButton from "../SendData";
 
 const actions = [
   {
